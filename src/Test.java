@@ -36,8 +36,9 @@ public class Test {
                 System.out.println("Rozważ oszukiwanie :D");
         }
 
-
-
+        System.out.println("tests tests tests tests from home");
+        System.out.println("tests tests tests tests from home");
+        System.out.println("tests tests tests tests from home");
 
     }
 }
