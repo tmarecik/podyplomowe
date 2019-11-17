@@ -1,37 +1,27 @@
 package Laboratorium7;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class formatCalculator {
     public static void main(String[] args) {
 
-            String bitnumber = "101";
-            int maximumPower = bitnumber.length();
-            int start =0;
-            int end = 1;
+        int[] numbers;
+        Point[] points;
 
-            double wynik = 0;
+        Integer[] series = new Integer[3];
+        series[0] = 10;
+        series[1] = 3;
+        series[2] = 5;
 
-        for(int i = 3; i > 0; i--){
+        System.out.println(series[1]);
 
-                int skladniki = Integer.parseInt(bitnumber.substring(start, end));
-//                System.out.println(skladniki);
-//            System.out.println("i: " + i);
-                double skladnikDoPotegi;
-                skladnikDoPotegi = Math.pow(skladniki, maximumPower);
-            System.out.println(skladnikDoPotegi);
+        int[] n = {1,2,3,4,5,6,7,8,9,10};
+        System.out.println(n[5]);
 
-//            maximumPower--;
-            start++;
-            end++;
+        char[] letters = {'a','b','c'};
+        System.out.println(letters[letters.length -1]);
 
-            wynik = wynik + skladnikDoPotegi;
-//
-//
-            System.out.println(wynik);
         }
-
     }
 
-
-}
