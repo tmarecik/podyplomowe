@@ -1,7 +1,7 @@
 package ZadanieDomowe1;
 import org.jetbrains.annotations.NotNull;
 
-public class NumericalSystemConversion {
+class NumericalSystemConversion {
 
     /*
      * helping method use for revert input string
@@ -9,14 +9,14 @@ public class NumericalSystemConversion {
      * */
     private String revert(@NotNull String stringToRevert) {
 
-        String revertedString = "";
+        StringBuilder revertedString = new StringBuilder();
         int increments = stringToRevert.length();
 
         while (increments > 0) {
-            revertedString += stringToRevert.charAt(increments - 1);
+            revertedString.append(stringToRevert.charAt(increments - 1));
             increments -= 1;
         }
-        return revertedString;
+        return revertedString.toString();
     }
 
     /*
@@ -25,13 +25,12 @@ public class NumericalSystemConversion {
      * or octal with numericSystemBase=8
      * for hexal with numericSystemBase=16
      * */
-    public String numericSystemConversion(int digit, int numericSystemBase) {
+    String numericSystemConversion(int digit, int numericSystemBase) {
         String result = "";
-        String finalResult = "";
-        int div;
+        String finalResult;
 
         while (digit > 0) {
-            div = digit % numericSystemBase;
+            var div = digit % numericSystemBase;
             result += divChecker(Integer.toString(div));
             digit = digit / numericSystemBase;
         }
@@ -40,12 +39,10 @@ public class NumericalSystemConversion {
         return finalResult;
     }
 
-    String div = "10";
-
     /* in hexadecyma system
     * make substitue letters in division
     * */
-    public String divChecker(String div) {
+    private String divChecker(String div) {
         String A = "A";
         String B = "B";
         String C = "C";
@@ -53,20 +50,22 @@ public class NumericalSystemConversion {
         String E = "E";
         String F = "F";
 
-        if (div.equals("10")) {
-            return A; }
-        else if (div.equals("11")) {
-            return B; }
-        else if (div.equals("12")) {
-            return C; }
-        else if (div.equals("13")) {
-            return D; }
-        else if (div.equals("14")) {
-            return E; }
-        else if (div.equals("15")) {
-            return F; }
-        else 
-            return div;
+        switch (div) {
+            case "10":
+                return A;
+            case "11":
+                return B;
+            case "12":
+                return C;
+            case "13":
+                return D;
+            case "14":
+                return E;
+            case "15":
+                return F;
+            default:
+                return div;
+        }
     }
 }
 
