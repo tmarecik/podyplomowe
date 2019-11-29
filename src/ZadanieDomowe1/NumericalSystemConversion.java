@@ -19,29 +19,10 @@ class NumericalSystemConversion {
         return revertedString.toString();
     }
 
-    /*
-     * method for make digit conversion from metric system into binary system
-     * with numericSystemBase=2
-     * or octal with numericSystemBase=8
-     * for hexal with numericSystemBase=16
-     * */
-    String numericSystemConversion(int digit, int numericSystemBase) {
-        String result = "";
-        String finalResult;
-
-        while (digit > 0) {
-            var div = digit % numericSystemBase;
-            result += divChecker(Integer.toString(div));
-            digit = digit / numericSystemBase;
-        }
-
-        finalResult = revert(result);
-        return finalResult;
-    }
 
     /* in hexadecyma system
-    * make substitue letters in division
-    * */
+     * make substitue letters in division
+     * */
     private String divChecker(String div) {
         String A = "A";
         String B = "B";
@@ -66,6 +47,27 @@ class NumericalSystemConversion {
             default:
                 return div;
         }
+    }
+
+
+    /*
+     * method for make digit conversion from metric system into binary system
+     * with numericSystemBase=2
+     * or octal with numericSystemBase=8
+     * for hexal with numericSystemBase=16
+     * */
+    String numericSystemConversion(int digit, int numericSystemBase) {
+        String result = "";
+        String finalResult;
+
+        while (digit > 0) {
+            var div = digit % numericSystemBase;
+            result += divChecker(Integer.toString(div));
+            digit = digit / numericSystemBase;
+        }
+
+        finalResult = revert(result);
+        return finalResult;
     }
 }
 
