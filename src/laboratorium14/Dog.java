@@ -7,7 +7,6 @@ public class Dog extends Animal {
 
     Dog() {
         instanceNumber++;
-
     }
 
     @Override
